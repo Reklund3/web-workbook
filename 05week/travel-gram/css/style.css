@@ -12,9 +12,31 @@ body{
 }
 .box{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: white;
   border: 1px solid black;
+}
+.boxtop{
+
+}
+.imagebox{
+
+}
+.textbox{
+
+}
+.boxbot{
+  bottom: 0px auto;
+  width: 100% auto;
+}
+.likesbox{
+  float: left;
+  margin: 2%;
+}
+.readmorelink{
+  float: right;
+  margin: 2%;
 }
 .box1{
   grid-area: box1;
@@ -51,7 +73,7 @@ body{
   grid-gap: 1em;
   }
 /* for phone size */
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .grid{
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -66,9 +88,12 @@ body{
       "box9"
       "box10";
   }
+  .imagebox{
+    text-align: center;
+  }
 }
 /* for tablet size */
-@media (max-width: 768px) {
+@media (min-width:577px) and (max-width: 768px) {
   .grid{
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
