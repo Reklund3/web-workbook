@@ -44,7 +44,9 @@ function addItem(event){
   document.getElementsByTagName('ul')[0].appendChild(newItem);
   addRemoveButton(newItem);
   updateCartNumber();
+  document.getElementById('itemInput').value = '';
 }
+
 //updates the cart list item count when ever an item is added or removed from
 //the list.
 function updateCartNumber(){
@@ -56,7 +58,7 @@ function addRemoveButton(item){
   let removeButton = document.createElement("button");
   removeButton.innerHTML = "Remove Item";
   item.append(removeButton);
-  removeItem.onclick = removeItem;
+  removeButton.onclick = removeItem;
 }
 function addRemoveButtons(){
   for (let i = 0; i < document.getElementsByTagName("ul")[0].children.length; i++){
