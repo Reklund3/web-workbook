@@ -1,43 +1,45 @@
-body { background-color: Black; width:75%; }
-h1 { color: white; text-decoration: underline; }
-h2 { color: grey; }
-h3{ color: grey; }
-h4{ color: grey; }
-ul{ color: grey; }
-p{ color: white; }
-.container{
-  width: auto;
-  height: auto;
+body {
+  background-color: rgb(0,0,160);
+  color: white;
 }
-.TopPane{
-  text-align: center;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  height: 0px;
+a {
+  color: white;
+}
+.grid {
+  padding: 0% 10%;
+  /* margin-bottom: 50px; */
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  grid-template-areas:
+  "box1 box1 box1"
+  "box2 box3 box3"
+  "box2 box3 box3"
+  "box2 box3 box3"
+  ;
+}
+.content {
+  display: none;
+  word-wrap: break-word;
+}
+#box1 {
+  grid-area: box1;
   width: 100%;
-  background: Black;
-}
-.NavPane{
-  float: left;
-  margin-top: 100px;
-  width: 15%;
-  height: auto;
-  background: Black;
-}
-.MidPane{
-  float: left;
-  width: 85%;
-  margin-top: 100px;
-  margin-bottom: 75px;
-  background: Black;
-}
-.FootPane{
-  border: 1px solid white;
   text-align: center;
-  position: fixed;
-  left: 0px;
+}
+#box2 {
+  grid-area: box2;
+  width: 100%;
+}
+#box3 {
+  grid-area: box3;
+}
+#box4 {
+  position: absolute;
+  width: 80%;
+  margin: 0% 10%;
   bottom: 0px;
-  width: 100%;
-  background: Black;
+  display: flex;
+  /* grid-area: box4; */
+  justify-content: space-around;
+  overflow: scroll;
 }
