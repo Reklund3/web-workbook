@@ -3,11 +3,9 @@
 let val = 'X';
 let winner = false;
 let moveCount = 0;
-// let array = ['','','','','','','',''];
 
 $(document).ready(function() {
   // Put app logic in here
-
   $('[data-cell]').on('click', function (){
     if (winner == false) {
       if(!$(this).text()) {
