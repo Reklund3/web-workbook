@@ -2,17 +2,25 @@
 
 let val = 'X';
 let winner = false;
-// let array = ['','','','','','','',''];
+let moveCount = 0;
 
 $(document).ready(function() {
   // Put app logic in here
   $('[data-cell]').on('click', function (){
-    if(!$(this).text()) {
-      $(this).text(setValue());
+    if (winner == false) {
+      if(!$(this).text()) {
+        $(this).text(setValue());
+        moveCount++;
+      }
     }
-    else { }
   winCon();
-  console.log(winner);
+  console.log(moveCount);
+  })
+  $('#clear').on('click', function (){
+    $('[data-cell]').empty();
+    $('#announce-winner').text('');
+    winner = false;
+    moveCount = 0;
   })
 });
 
@@ -100,5 +108,8 @@ function winCon() {
       $('#announce-winner').text(val + ' wins the game');
       winner = true;
     }
+  }
+  if (Number(moveCount) === 9) {
+    $('#announce-winner').text('It is a scrath!!!!');
   }
 }
